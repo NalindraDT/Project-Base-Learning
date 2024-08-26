@@ -1,6 +1,6 @@
 <?php include('koneksi.php');
 $db = new database();
-$data_kelas = $db->tampil_data()?>
+$data_dosen = $db->tampil_data()?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,10 +37,10 @@ $data_kelas = $db->tampil_data()?>
           <a href="../index.php" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Halaman Utama</a>
         </li>
         <li>
-          <a href="../sistem/tampil.php" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Data Kelas</a>
+          <a href="../matkul/tampil.php" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Matkul</a>
         </li>
         <li>
-          <a href="../dosen/tampil.php" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Dosen/Matkul</a>
+          <a href="../mahasiswaa/tampil.php" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Mahasiswa/Kelas</a>
         </li>
         <li>
           <a href="export.php" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Cetak Data</a>
@@ -54,7 +54,8 @@ $data_kelas = $db->tampil_data()?>
 </nav>
 <div class="flex-grow flex justify-center items-start p-16">
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg max-w-full">
-    <a href="tambah.php"><button class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Tambah Mahasiswa</button></a>
+    <a href="tambah.php"><button class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Tambah Dosen</button></a>
+
     <table class="w-4/4 text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 mx-auto">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 
@@ -63,13 +64,19 @@ $data_kelas = $db->tampil_data()?>
                         No
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        NPM
+                        NIDN
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Nama Mahasiswa
+                        NIP
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Nama Dosen
                     </th>
                     <th scope="col" class="px-6 py-3">
                         Alamat
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Matkul
                     </th>
                     <th scope="col" class="px-6 py-3">
                       Aksi
@@ -80,24 +87,30 @@ $data_kelas = $db->tampil_data()?>
             <tbody class="bg-white dark:bg-gray-800">
                 <?php 
                 $no = 1;
-                foreach($data_kelas as $row){
+                foreach($data_dosen as $row){
                     ?>
                     <tr>
                         <td class="px-6 py-4">
                         <?php echo $no++; ?>
                         </td>
                         <td class="px-6 py-4">
-                        <?php echo $row['npm']; ?>
+                        <?php echo $row['nidn']; ?>
                         </td>
                         <td class="px-6 py-4">
-                        <?php echo $row['nama_mhs']; ?>
+                        <?php echo $row['nip']; ?>
+                        </td>
+                        <td class="px-6 py-4">
+                        <?php echo $row['nama_dsn']; ?>
                         </td>
                         <td class="px-6 py-4">
                         <?php echo $row['alamat']; ?>
                         </td>
+                        <td class="px-6 py-4">
+                        <?php echo $row['nama_mk']; ?>
+                        </td>
                         <td class="px-6 py-4 text-right">
-                            <a href="edit.php?id=<?php echo $row['id_mhs']; ?>" class=" text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Edit</a>
-                            <a href="proses.php?action=delete&id=<?php echo $row['id_mhs']; ?>" class=" text-red-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-white md:dark:hover:text-red-500 dark:hover:text-white">Hapus</a>
+                            <a href="edit.php?id=<?php echo $row['id_dsn']; ?>" class=" text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Edit</a>
+                            <a href="proses.php?action=delete&id=<?php echo $row['id_dsn']; ?>" class=" text-red-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 dark:text-white md:dark:hover:text-red-500 dark:hover:text-white">Hapus</a>
                         </td>
                     </tr>
                     <?php

@@ -21,7 +21,7 @@
     <title>Full Screen Form</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style="background-image: url('https://pnc.ac.id/wp-content/uploads/2021/12/IMG_8522-scaled-e1639378595946-1024x660.jpg');">
+<body class="h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style="background-image: url('https://static.vecteezy.com/system/resources/previews/000/622/344/original/beautiful-background-of-lines-with-gradients-vector.jpg');">
 
     <div class="w-full max-w-md p-6 space-y-8 bg-white rounded-lg shadow-xl dark:bg-gray-800">
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white">

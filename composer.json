@@ -1,0 +1,16 @@
+{
+    "name": "sistemperkuliahan/pbl",
+    "description": "Diperuntukan sebagai sarana pembelajaran Object Oriented Programming",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Nalindra DT",
+            "email": "nalindradt@gmail.com"
+        }
+    ],
+    "require": {
+        "dompdf/dompdf": "^3.0",
+        "phpoffice/phpspreadsheet": "^2.2"
+    }
+}

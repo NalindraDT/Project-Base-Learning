@@ -16,7 +16,8 @@ class database{
     function tampil_data()
 	{
 		$data = mysqli_query($this->koneksi, 
-        "SELECT kelas.id_kls, kelas.nama_kelas, kelas.thn_akademik, prodi.nama_prodi 
+        "SELECT kelas.id_kls, kelas.nama_kelas, kelas.thn_akademik, 
+		prodi.nama_prodi 
         FROM kelas 
         JOIN prodi ON kelas.id_prodi = prodi.id_prodi"
     );
